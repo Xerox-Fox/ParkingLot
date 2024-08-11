@@ -1,9 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:onboarding_screen_app/pages/signin_screen.dart';
 import 'package:onboarding_screen_app/widgets/onboarding_card.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'qrcode.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
@@ -66,7 +64,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
         description: 'Login Or Sign Up An Account',
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => QRCODE()));
+              context, MaterialPageRoute(builder: (context) => const SignInScreen()));
         },
       ),
     ]);
