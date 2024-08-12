@@ -1,5 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:onboarding_screen_app/pages/home_screen.dart';
+import 'package:onboarding_screen_app/pages/qrcode.dart';
 import 'package:onboarding_screen_app/widgets/reusable_widget.dart';
 
 
@@ -15,6 +16,7 @@ class _SignupScreenState extends State<SignupScreen> {
   final TextEditingController _userNameTextController = TextEditingController();
   final TextEditingController _passwordTextController = TextEditingController();
   final TextEditingController _emailTextController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +54,15 @@ class _SignupScreenState extends State<SignupScreen> {
                   height: 20,
                 ),
                 signInSignUpButton(context, false, () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+                  print("Signing Up");
+
+                  FirebaseAuth.instance.createUserWithEmailAndPassword(email: _emailTextController.text, password: _passwordTextController.text).then((value) {
+                    print("Created New Account");
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => QRCODE()));
+                  }).onError((error, stackTrace) {
+                    print("Error ${error.toString()}");
+                  },);
                 })
             ],
           ),

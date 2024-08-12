@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "944343214664",
+    "project_id": "parkinglot-37200",
+    "storage_bucket": "parkinglot-37200.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944343214664:android:464a5abc63d3339fe0067d",
+        "android_client_info": {
+          "package_name": "com.example.onboarding_screen_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHh0-zI-2TZ_tEHKhk9R7jbxm-Ib7SAt4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

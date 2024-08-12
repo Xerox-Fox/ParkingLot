@@ -11,7 +11,7 @@ class OnboardingPage extends StatefulWidget {
 }
 
 class _OnboardingPageState extends State<OnboardingPage> {
-  static final PageController _pageController = PageController(initialPage: 0);
+  final PageController _pageController = PageController(initialPage: 0);
 
   final List<Widget> _onBoardingPages = [];
 
@@ -28,7 +28,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
         onPressed: () {
           _pageController.animateToPage(
             1,
-            duration: Durations.long1,
+            duration: Duration(seconds: 1),
             curve: Curves.linear,
           );
         },
@@ -42,7 +42,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
         onPressed: () {
           _pageController.animateToPage(
             2,
-            duration: Durations.long1,
+            duration: Duration(seconds: 1),
             curve: Curves.linear,
           );
         },
@@ -53,7 +53,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
         buttonText: 'Next',
         onPressed: () {
           _pageController.animateToPage(3,
-              duration: Durations.long1, curve: Curves.linear);
+              duration: Duration(seconds: 1), curve: Curves.linear);
         },
         description: '',
       ),
@@ -63,8 +63,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
         buttonText: 'Done',
         description: 'Login Or Sign Up An Account',
         onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => const SignInScreen()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const SignInScreen()));
         },
       ),
     ]);
@@ -98,7 +98,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
               onDotClicked: (index) {
                 _pageController.animateToPage(
                   index,
-                  duration: Durations.long1,
+                  duration: Duration(seconds: 1),
                   curve: Curves.linear,
                 );
               },
