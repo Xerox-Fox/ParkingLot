@@ -1,4 +1,7 @@
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:onboarding_screen_app/pages/qrcode.dart';
 import 'package:onboarding_screen_app/pages/signup_screen.dart';
 import 'package:onboarding_screen_app/widgets/reusable_widget.dart';
 
@@ -35,7 +38,14 @@ class _SignInScreenState extends State<SignInScreen> {
                 reusableTextField("Enter Password", Icons.lock_outline, true,
                     _passwordTextController),
                 const SizedBox(height: 20),
-                signInSignUpButton(context, true, () {}),
+                signInSignUpButton(context, true, () {
+                  FirebaseAuth.instance.signInWithEmailAndPassword(email: _emailTextController.text, password: _passwordTextController.text).then((value) {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => QRCODE()));
+                  }).onError((error, stackTrace) {
+                    print("Error ${error.toString()}");
+                  },);
+                }),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

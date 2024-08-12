@@ -37,6 +37,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   smooth_page_indicator: ^1.1.0
   qr_code_scanner: ^0.7.0
+  http:
+  firebase_core: ^2.10.0
+  firebase_auth: ^4.16.0
+  flutter_onboarding_screen: ^2.0.2
 
 dev_dependencies:
   flutter_test:
